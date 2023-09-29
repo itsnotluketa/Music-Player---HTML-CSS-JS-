@@ -146,20 +146,22 @@ body {
     border-radius: 8px;
     padding: 10px;
     text-align: center;
-    pointer-events: none;
-    position: relative;
+}
+
+.main__col img {
+    width: 100%;
 }
 
 .main__col h3 {
     color: white;
-    margin: 5px 0;
+    margin: 8px 0;
     text-align: left;
     font-size: 15px;
 }
 
 .main__col p {
     color: rgb(100, 100, 100);
-    margin: 5px 0;
+    margin: 8px 0;
     font-size: 13px;
     text-align: left;
 }

@@ -42,27 +42,14 @@
 
             <div class="sidebar__playlists">
                 <a href="">Playlist 1</a>
-                <a href="">Playlist 1</a>
-                <a href="">Playlist 1</a>
-                <a href="">Playlist 1</a>
-                <a href="">Playlist 1</a>
+                <a href="">Playlist 2</a>
+                <a href="">Playlist 3</a>
             </div> <!--sidebar-playlists-->
 
             <div class="sidebar__playlists">
-                <a href="">Playlist 1</a>
-                <a href="">Playlist 1</a>
-                <a href="">Playlist 1</a>
-                <a href="">Playlist 1</a>
-                <a href="">Playlist 1</a>
+                <a href="">+ Nova Pasta</a>
             </div> <!--sidebar-playlists-->
 
-            <div class="sidebar__playlists">
-                <a href="">Playlist 1</a>
-                <a href="">Playlist 1</a>
-                <a href="">Playlist 1</a>
-                <a href="">Playlist 1</a>
-                <a href="">Playlist 1</a>
-            </div> <!--sidebar-playlists-->
         </div>
 
     </div><!--sidebar-->
@@ -79,43 +66,43 @@
                 <div class="main__col">
                     <img src="covers/img/top50.png">
                     <h3>Top 50 Mais Tocadas</h3>
-                    <p>Os 50 rocks mais tocados dos últimos tempos desde 1980 até os tempos atuais... Cover: Lucas</p>
+                    <p>Os 50 rocks mais tocados dos últimos tempos. </p>
                 </div>
 
                 <div class="main__col">
                     <img src="covers/img/top50global.png">
                     <h3>Top 50 Global Mais Tocadas</h3>
-                    <p>Os 50 rocks mais tocados mundialmente na plataforma... Cover: Lucas</p>
+                    <p>Os 50 rocks mais tocados mundialmente na plataforma. </p>
                 </div>
 
                 <div class="main__col">
                     <img src="covers/img/theclassic.png">
                     <h3>Classicos do Rock</h3>
-                    <p>Os rock classicos de todos os tempos. Cover: Lucas</p>
+                    <p>Os rock classicos de todos os tempos.</p>
                 </div>
 
                 <div class="main__col">
                     <img src="covers/img/thegrunge.png">
                     <h3>Grunge MIX</h3>
-                    <p>O mais puro grunde teen da era 2000. Cover: Lucas</p>
+                    <p>O mais puro grunde teen da era 2000.</p>
                 </div>
 
                 <div class="main__col">
                     <img src="covers/img/thehard.png">
                     <h3>Heavy Metal Hits</h3>
-                    <p>Give me fuel, give me fire... Cover: Lucas</p>
+                    <p>Give me fuel, give me fire...</p>
                 </div>
 
                 <div class="main__col">
                     <img src="covers/img/thenumetal.png">
                     <h3>The NuMetal Era</h3>
-                    <p>Aaare you readyyyyy? Cover: Lucas</p>
+                    <p>Aaare you readyyyyy?</p>
                 </div>
 
                 <div class="main__col">
                     <img src="covers/img/thepunk.png">
                     <h3>Punk Rock Hits</h3>
-                    <p>Punks classicos que moldaram a cena. Cover: Lucas </p>
+                    <p>Punks classicos que moldaram a cena. </p>
                 </div>
 
             </div>
@@ -126,17 +113,24 @@
                 </div>
 
                 <div class="main__col" data-image="covers/img/back in black - acdc.jpg" data-artist="ACDC"
-                    data-song="Hells bells" data-file="assets/ACDC/Back In Black/Hells Bells.mp3">
+                    data-song="Hells bells" data-file="assets\ACDC\01 Hells Bells.mp3">
                     <img src="covers/img/back in black - acdc.jpg" />
                     <h3>Hells Bells</h3>
                     <p>AC/DC</p>
                 </div>
 
                 <div class="main__col" data-image="covers/img/Dirt CAPA.jpg" data-artist="Alice in Chains "
-                    data-song="Godsmack" data-file="assets/Alice in chains/Dirt/Godsmack.mp3">
+                    data-song="Godsmack" data-file="assets/Alice in Chains/08 Godsmack.mp3">
                     <img src="covers/img/Dirt CAPA.jpg" />
                     <h3>Godsmack</h3>
                     <p>Alice in Chains</p>
+                </div>
+
+                <div class="main__col" data-image="covers/img/the_sickness - disturbed.jpg" data-artist="Disturbed "
+                    data-song="Down With The Sickness" data-file="assets\Disturbed\04 Down With The Sickness.mp3">
+                    <img src="covers/img/the_sickness - disturbed.jpg" />
+                    <h3>Down With The Sickness</h3>
+                    <p>Disturbed</p>
                 </div>
 
             </div>
@@ -170,15 +164,13 @@
 
     </audio>
 
-
-
     <script src="js/all.min.js"></script>
 
     <script>
 
-        var audioPlayer = document.getElementById('audioPlayer');
+        var audioPlayer = document.getElementById('audiolayer');
         var loaded = false;
-        
+
         var playBtn = document.getElementById('playBtn');
         var pauseBtn = document.getElementById('pauseBtn');
 
@@ -192,21 +184,21 @@
         });
 
         const playSong = (file) => {
-
-            if (loaded == false) {
-                audioPlayer.innerHTML = `<source src="` + file + `" type="audio/mp3" />`;
+            {
+                audioplayer.innerHTML = `<source src="` + file + `" type="audio/mp3" />`;
                 loaded = true;
             }
 
-            audioPlayer.play();
+            audioplayer.load();
+            audioplayer.play();
 
-            playBtn.style.display = 'none';
-            pauseBtn.style.display = "inline";
+            playBtn.style.display = "none";
+            pauseBtn.style.display = 'inline';
         }
 
         document.querySelectorAll('.main__col').forEach(item => {
 
-            item.addEventListener('click',event => {
+            item.addEventListener('click', event => {
                 let image = item.getAttribute('data-image');
                 let artist = item.getAttribute('data-artist');
                 let song = item.getAttribute('data-song');
@@ -215,11 +207,11 @@
                 let playerArtistComponent = document.getElementsByClassName('player__artist');
 
                 playerArtistComponent[0].innerHTML = `
-                    <img src="`+image+`"/>
-                    <h3>`+ artist + `<br/><span>` + song + `</span></h3>
+                    <img src="`+ image + `"/>
+                    <h3>`+ song + `<br/><span>` + artist + `</span></h3>
 
                 `;
-
+                console.log(encodeURI(file));
                 playSong(file);
             })
 
